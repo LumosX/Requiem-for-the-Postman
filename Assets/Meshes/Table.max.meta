@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 02e9938d122de7241960117375282d6f
+timeCreated: 1533982067
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Chair
+    100004: In tray
+    100006: Out tray
+    100008: Table
+    100010: Out tray slot
+    100012: Phone
+    100014: Phone screen
+    100016: Dict cover half
+    100018: Dict cover half001
+    100020: Dict pages half
+    100022: Dict pages half001
+    100024: Envelope
+    100026: Envelope extras
+    100028: Teacup
+    100030: Teacup plate
+    100032: Teacup liquid
+    400000: //RootNode
+    400002: Chair
+    400004: In tray
+    400006: Out tray
+    400008: Table
+    400010: Out tray slot
+    400012: Phone
+    400014: Phone screen
+    400016: Dict cover half
+    400018: Dict cover half001
+    400020: Dict pages half
+    400022: Dict pages half001
+    400024: Envelope
+    400026: Envelope extras
+    400028: Teacup
+    400030: Teacup plate
+    400032: Teacup liquid
+    2100000: No Name
+    2300000: //RootNode
+    2300002: Chair
+    2300004: In tray
+    2300006: Out tray
+    2300008: Table
+    2300010: Out tray slot
+    2300012: Phone
+    2300014: Phone screen
+    2300016: Dict cover half
+    2300018: Dict cover half001
+    2300020: Dict pages half
+    2300022: Dict pages half001
+    2300024: Envelope
+    2300026: Envelope extras
+    2300028: Teacup
+    2300030: Teacup plate
+    2300032: Teacup liquid
+    3300000: //RootNode
+    3300002: Chair
+    3300004: In tray
+    3300006: Out tray
+    3300008: Table
+    3300010: Out tray slot
+    3300012: Phone
+    3300014: Phone screen
+    3300016: Dict cover half
+    3300018: Dict cover half001
+    3300020: Dict pages half
+    3300022: Dict pages half001
+    3300024: Envelope
+    3300026: Envelope extras
+    3300028: Teacup
+    3300030: Teacup plate
+    3300032: Teacup liquid
+    4300000: Box001
+    4300002: Table
+    4300004: Chair
+    4300006: In tray
+    4300008: Out tray
+    4300010: Out tray slot
+    4300012: Phone
+    4300014: Phone screen
+    4300016: Teacup plate
+    4300018: Teacup
+    4300020: Envelope
+    4300022: Envelope extras
+    4300024: Dict pages half
+    4300026: Dict cover half
+    4300028: Dict cover half001
+    4300030: Dict pages half001
+    4300032: Teacup liquid
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
