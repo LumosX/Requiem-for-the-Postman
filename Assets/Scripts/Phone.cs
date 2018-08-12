@@ -24,6 +24,7 @@ public class Phone : MonoBehaviour {
 
     void Awake() {
         source = GetComponent<AudioSource>();
+        phoneUICanvas.gameObject.SetActive(true);
     }
 
     void Start() {
