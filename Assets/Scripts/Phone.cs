@@ -22,10 +22,13 @@ public class Phone : MonoBehaviour {
     private AudioSource source;
     private AudioClip callClip;
 
+    void Awake() {
+        source = GetComponent<AudioSource>();
+    }
+
     void Start() {
         OnMouseUp();
 
-        source = GetComponent<AudioSource>();
     }
 
     void Update() {
