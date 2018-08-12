@@ -28,7 +28,7 @@ public class Phone : MonoBehaviour {
     }
 
     void Start() {
-        OnMouseUp();
+        //OnMouseUp();
 
     }
 
