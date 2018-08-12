@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OutTray : MonoBehaviour {
 
+    public AudioClip[] clips;
     public Destination dest;
 
     // Use this for initialization
@@ -17,6 +19,9 @@ public class OutTray : MonoBehaviour {
         if (collision.gameObject.tag == "Envelope") {
             //Debug.Log("Out tray collided with an envelope");
             var letterData = collision.gameObject.GetComponent<Letter>();
+
+            // Play a poofing sound as the letter disappears
+            GetComponent<AudioSource>().PlayOneShot(clips.ToList().GetRand());
 
             // if it's a letter from a previous letter, just ignore it completely
             if (letterData.levelCreated != GameManager.CurLevel) {

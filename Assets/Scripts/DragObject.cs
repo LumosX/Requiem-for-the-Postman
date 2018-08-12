@@ -64,6 +64,7 @@ public class DragObject : MonoBehaviour {
 
         // disable rigidbody whilst dragging to prevent gravitational acceleration
         rb.useGravity = false;
+        rb.velocity = Vector3.zero;
 
         //float distance_to_screen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         var mousePosRatio = Mathf.InverseLerp(0, Screen.height, Input.mousePosition.y);

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54013661216026928}
   - component: {fileID: 114367779921710792}
   - component: {fileID: 114418350270655512}
+  - component: {fileID: 82240408386101696}
   m_Layer: 0
   m_Name: Russian Dictionary
   m_TagString: Untagged
@@ -257,7 +258,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894335315390652}
-  m_LocalRotation: {x: 0, y: -0, z: 0.008726839, w: -0.9999619}
+  m_LocalRotation: {x: 0, y: -0, z: 0.00087297574, w: -0.99999964}
   m_LocalPosition: {x: 5.33, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -265,7 +266,7 @@ Transform:
   - {fileID: 4478563994487980}
   m_Father: {fileID: 4502159393470024}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.9}
 --- !u!4 &4045295884908652
 Transform:
   m_ObjectHideFlags: 1
@@ -554,6 +555,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.463265, y: 2.137576, z: 14.147712}
   m_Center: {x: -5.140117, y: -1.075253, z: -0.015264034}
+--- !u!82 &82240408386101696
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030518326575922}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.8
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114228136747367222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -574,7 +655,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -587,7 +668,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "<b>\u0411\u043E\u043B\u044C\u0448\u043E\u0439</b> - Great, big\n<b>\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0439</b>
-    - Little, small\n<b>\u0412\u0435\u0447\u043D\u044B\u0439</b> - Always\n\n<b>\u0410\u043C\u0431\u0430\u0440</b>
+    - Little, small\n<b>\u0412\u0435\u0447\u043D\u044B\u0439</b> - Eternal\n\n<b>\u0410\u043C\u0431\u0430\u0440</b>
     - Barn\n<b>\u041A\u0443\u0440\u0433\u0430\u043D</b> - Burial mound\n<b>\u041B\u044E\u043A</b>
     - Hatch\n<b>M\xFChle</b> - \u041C\u0435\u043B\u044C\u043D\u0438\u0446\u0430\n<b>\u0412\u043E\u0434\u0430</b>
     - Water\n<b>\u0417\u0430\u043A\u0430\u0442</b> - Sunset\n\n"
@@ -651,6 +732,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b800f33d8900154a9d81f708d3f9e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupClips:
+  - {fileID: 8300000, guid: f3c390519ad50de499f28e5e3c8f036e, type: 3}
+  - {fileID: 8300000, guid: ebb2a1ad6df34f84783ce868d45fbb07, type: 3}
+  - {fileID: 8300000, guid: bf19bd65b1e5e114ab7e9077e68c1cae, type: 3}
+  openClips:
+  - {fileID: 8300000, guid: c4803f9eae5e9314dbbc17fe5e66b769, type: 3}
+  - {fileID: 8300000, guid: d688e8059462e184fb03917c12f71ffa, type: 3}
+  closeClips:
+  - {fileID: 8300000, guid: d9fc87fc6b54b004dbc320430aef317c, type: 3}
+  - {fileID: 8300000, guid: 2921ae15e71eb904bae36ad551415ae2, type: 3}
 --- !u!114 &114549556518155048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -729,7 +820,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -805,7 +896,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0

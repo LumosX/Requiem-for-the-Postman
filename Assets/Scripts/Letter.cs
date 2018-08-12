@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Letter : MonoBehaviour {
+
+    public AudioClip[] clips;
 
     public int levelCreated; // easier than pooling letters and destroying them when levels end.
     public Destination dest;
@@ -24,6 +27,7 @@ public class Letter : MonoBehaviour {
 
     void OnMouseDown() {
         GameManager.UpdateHeldItemInfo(itemInfo);
+        GetComponent<AudioSource>().PlayOneShot(clips.ToList().GetRand());
     }
 
     void OnMouseUp() {

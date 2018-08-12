@@ -1,8 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Teacup : MonoBehaviour {
+
+    public AudioClip[] pickupClips;
+    public AudioClip[] drinkClips;
+
     private float lastSipTime;
     public float sipCooldown = 5;
     private bool isDragged = false;
@@ -17,6 +22,8 @@ public class Teacup : MonoBehaviour {
     void OnMouseDown() {
         isDragged = true;
         GameManager.UpdateHeldItemInfo("Bring the cup close to you and press E to partially quench your thirst.");
+
+        GetComponent<AudioSource>().PlayOneShot(pickupClips.ToList().GetRand());
     }
 
     void OnMouseUp() {
@@ -33,6 +40,8 @@ public class Teacup : MonoBehaviour {
             if (Camera.main.WorldToScreenPoint(transform.position).z > 19) return;
             //Debug.Log("HAD A SIP!");
             GameManager.HadASip();
+
+            GetComponent<AudioSource>().PlayOneShot(drinkClips.ToList().GetRand());
 
             lastSipTime = Time.time;
         } 
