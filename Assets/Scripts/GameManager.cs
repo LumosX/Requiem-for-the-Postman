@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour {
 
         rand = new System.Random();
 
-	    StartLevel(8);
+	    StartLevel(0);
         //SpawnLetter();
 	}
 	
