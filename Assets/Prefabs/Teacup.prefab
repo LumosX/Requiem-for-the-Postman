@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 54715054069741366}
   - component: {fileID: 65032275917718364}
   - component: {fileID: 114843776802898058}
+  - component: {fileID: 114251028952549526}
   m_Layer: 0
   m_Name: Teacup
   m_TagString: Untagged
@@ -201,7 +202,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!64 &64221789855666388
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -228,6 +229,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6450996, y: 0.82607365, z: 2.6760168}
   m_Center: {x: -0.06289101, y: 2.316381, z: -0.015811443}
+--- !u!114 &114251028952549526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631145277192850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f848b14e3b36c7b48aa7eef4df373673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114843776802898058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,3 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea240afa18d39f488bc05dec7988e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetOnDrop: 1

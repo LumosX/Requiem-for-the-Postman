@@ -6,8 +6,19 @@ using UnityEngine;
 
 public static class GenerationUtilities {
 
+    public static readonly List<string> names = new [] {
+        "Tom Shaw", "Stanley Wilkinson", "George Murphy", "Harley Hopkins", "Ellis Moore", "Taylor Herbert",
+        "Terrance Mack", "Casen Langley", "Peter Whitley", "Rylen Downs", "Joshua Bailey", "Morgan Lee", "Arthur Fox",
+        "Theo Wallace", "Spencer Holland", "Cael Foster", "Caleb Avila", "Hector Shaffer", "Thiago Mayer", "Van Alford",
+        "Ellis Hall", "Oscar Harper", "Ethan Taylor", "Arthur Carter", "Connor Holland", "Ahmad Beach", "Karsen Mcleod",
+        "Axel White", "Trent Vance", "Ameer Albert", "Abby John", "Alisha Cox", "Bethany Wells", "Jasmine White",
+        "Faith Burns", "Lydia Cain", "Brinley Poole", "Marlene Mccray", "Summer Leonard", "Kayden Sharpe",
+        "Laura Sutton", "Mia Hopkins", "Demi Fletcher", "Keira Stevens", "Layla Webb", "Lena West", "Talia Richard",
+        "Zariah Chapman", "Corinne Knapp", "Mary Nelson"
+    }.ToList();
+
     public static string GenerateName(Language lang) {
-        return "J. Jonah Jameson";
+        return names.GetRand();
     }
 
     public static string GenerateAddress(Language lang) {
@@ -65,11 +76,39 @@ public static class GenerationUtilities {
     private static string[] englishVoids = new[] { "London, Britain", "Shenzhen, China", "Bristol, England", "Pwllheli, Wales", "New York City, USA", "Sofia, Bulgaria" };
 
     private static string[] bulgarian = new[]
-        {"Малко Хамбарово", "Вечна Могила", "Голяма Капакомелница", "Голям Водозалез"};
+        {"Малко Хамбарово", "Вечна Могила", "Голяма Шлюзомелница", "Голям Водозалез"};
     private static string[] bulgarianCountries = new[]
         {"Англия", "Великобритания", "Обединено Кралство", "Обединеното Кралство"};
     private static string[] bulgarianVoids = new[] {"Лондон, Великобритания", "София, България", "Бристол, Обединено Кралство", "Бристол, Великобритания",
         "Глазгоу, Великобритания", "Глазгоу, Шотландия", "Ню Йорк, САЩ", "Шънджън, Китай"};
+
+    private static string[] german = new[]
+        {"Kleines Scheunendorf", "Immerhügel", "Große Deckelmühle", "Großer Wasseruntergang"};
+    private static string[] germanCountries = new[]
+        {"England", "Großbritannien", "Großbritannien", "Großbritannien"};
+    private static string[] germanVoids = new[] {"London, Großbritannien", "Köln, Deutschland", "Bristol, England", "Rostock, Mecklenburg-Vorpommern, Deutschland",
+        "Basel, die Schweiz", "Glasgow, Schottland", "Shenzhen, Volksrepublic China"};
+
+    private static string[] norwegian = new[]
+        {"Lille Låveby", "Evighaug", "Store Lokkmølle", "Stort Vannsett"};
+    private static string[] norwegianCountries = new[]
+        {"England", "Storbritannia", "Storbritannia", "Storbritannia"};
+    private static string[] norwegianVoids = new[] {"Stavanger, Rogaland, Norge", "Reykjavik, Island", "Bristol, Storbritannien", "Wien, Østerrike",
+        "Edinburgh, Skottland", "Shenzhen, Folkerepubliken Kina", "Shenzhen, Kina"};
+
+    private static string[] russian = new[]
+        {"Маленкое Амбарово", "Вечньй Курган", "Большая Люкомельница", "Большой Водной Закат"};
+    private static string[] russianCountries = new[]
+        {"Англия", "Великобритания", "Объединенное Королевство"};
+    private static string[] russianVoids = new[] {"Лондон, Великобритания", "Омск, Россия", "Бристол, Великобритания", "Вена, Австрия",
+        "Глазго, Шотландия", "Иокогама, Япония", "Новый Йорк, США", "Шэньчжэнь, Китай"};
+
+    private static string[] chinese = new[]
+        {"小谷仓村", "永恒冢", "大舱口磨", "大水日落"};
+    private static string[] chineseCountries = new[]
+        {"英国", "大不列颠", "联合王国"};
+    private static string[] chineseVoids = new[] {"伦敦, 英国", "鄂木斯克, 俄国", "布里斯托尔, 大不列颠", "维也纳, 奥地利",
+        "爱丁堡, 苏格兰", "横滨, 日本", "纽约, 美利坚合众国", "深圳, 中国"};
 
 
     public static string GenerateDestName(Language lang, Destination dest) {
@@ -79,16 +118,16 @@ public static class GenerationUtilities {
             switch (lang) {
                 case Language.English:
                     return englishVoids.ToList().GetRand();
-                /* case Language.German:
-                     break;*/
+                case Language.German:
+                    return germanVoids.ToList().GetRand();
                 case Language.Bulgarian:
                     return bulgarianVoids.ToList().GetRand();
-                /*  case Language.Norwegian:
-                      break;
+                case Language.Norwegian:
+                    return norwegianVoids.ToList().GetRand();
                   case Language.Russian:
-                      break;
+                      return russianVoids.ToList().GetRand();
                   case Language.Chinese:
-                      break;*/
+                      return chineseVoids.ToList().GetRand();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(lang), lang, null);
             }
@@ -96,16 +135,16 @@ public static class GenerationUtilities {
         else switch (lang) {
                 case Language.English:
                     return GameManager.DestToStr(dest) + ", " + englishCountries.ToList().GetRand(); // I know, I know, this is horrible
-                                                                                                     /* case Language.German:
-                                                                                                          break;*/
+                case Language.German:
+                    return german[i] + ", " + germanCountries.ToList().GetRand();
                 case Language.Bulgarian:
                     return bulgarian[i] + ", " + bulgarianCountries.ToList().GetRand();
-                /* case Language.Norwegian:
-                    break;
+                case Language.Norwegian:
+                    return norwegian[i] + ", " + norwegianCountries.ToList().GetRand();
                 case Language.Russian:
-                    break;
+                    return russian[i] + ", " + russianCountries.ToList().GetRand();
                 case Language.Chinese:
-                    break;*/
+                    return chinese[i] + ", " + chineseCountries.ToList().GetRand();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(lang), lang, null);
             }

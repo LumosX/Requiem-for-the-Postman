@@ -17,10 +17,12 @@ public class OpenCloseDictionary : MonoBehaviour {
 
     void OnMouseDown() {
         isDragged = true;
+        GameManager.UpdateHeldItemInfo("Press E to open or close the dictionary.");
     }
 
     void OnMouseUp() {
         isDragged = false;
+        GameManager.UpdateHeldItemInfo("");
     }
 
 	// Update is called once per frame
@@ -33,7 +35,7 @@ public class OpenCloseDictionary : MonoBehaviour {
 
         // "animate" to destination.
 	    var targetZRot = topHalf.localEulerAngles.z + openSpeed * Time.deltaTime * (open ? -1 : 1);
-	    targetZRot = Mathf.Clamp(targetZRot, 220, 359); // 360 - 140 = 220
+	    targetZRot = Mathf.Clamp(targetZRot, 220, 359.9f); // 360 - 140 = 220
         topHalf.localEulerAngles = new Vector3(topHalf.localEulerAngles.x, topHalf.localEulerAngles.y, targetZRot);
         //Debug.Log(open + " === " + targetZRot + " === " + topHalf.localEulerAngles.z);
 	}

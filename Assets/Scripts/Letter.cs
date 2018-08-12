@@ -19,8 +19,7 @@ public class Letter : MonoBehaviour {
         GetComponentInChildren<Text>().text =
             GenerationUtilities.GenerateName(lang) + "\n" + GenerationUtilities.GenerateAddress(lang) + "\n" + GenerationUtilities.GenerateDestName(lang, dest);
 
-        itemInfo = "Drop this letter into the " + (lang == Language.English ? "\"" + GameManager.DestToStr(dest) + "\"" : "correct") +
-                   " box";
+        itemInfo = "Drop this letter into the correct box.";
     }
 
     void OnMouseDown() {

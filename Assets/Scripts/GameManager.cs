@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,11 @@ public class GameManager : MonoBehaviour {
     public Text lblWrong;
     public Text lblBombAlert;
     public RectTransform panelGameOver;
+    public Text lblLossReason;
     public Text lblGameOver;
     public Text lblItemInfo;
+    public Text lblThirst;
+    public Text lblLevel;
 
     public GameObject envelopePrefab;
     public Transform envelopeSpawnPoint;
@@ -24,23 +28,37 @@ public class GameManager : MonoBehaviour {
     public GameObject teacup;
     public GameObject teacupPlate;
     public GameObject bulgarianDictionary;
+    public GameObject germanDictionary;
+    public GameObject norwegianDictionary;
+    public GameObject russianDictionary;
+    public GameObject chineseDictionary;
 
     public static GameManager instance;
+    public static int CurLevel => instance.curLevel;
 
 
-    private LevelData[] levels = {
+    public static LevelData[] levels = {
         new LevelData(3, 60, false, false, false, null),
         new LevelData(5, 70, false, false, true, null),
         new LevelData(5, 70, true, false, true, null),
-        new LevelData(5, 70, true, false, true, Language.Bulgarian),
-        new LevelData(10, 120, true, false, true, Language.Bulgarian),
+        new LevelData(5, 80, true, false, true, Language.German),
+        new LevelData(5, 110, true, false, true, Language.German, Language.Norwegian),
+        new LevelData(10, 140, true, false, true, Language.German, Language.Norwegian, Language.Bulgarian),
+        new LevelData(10, 160, true, false, true, Language.German, Language.Norwegian, Language.Bulgarian, Language.Russian),
+        new LevelData(20, 200, true, false, true, Language.German, Language.Norwegian, Language.Bulgarian, Language.Russian),
+        new LevelData(20, 300, true, false, true, Language.German, Language.Norwegian, Language.Bulgarian, Language.Russian, Language.Chinese),
+
     };
 
+    private LevelData curLevelData;
     private int curLevel = 0;
     private int lettersCorrect = 0;
     private int lettersIncorrect = 0;
     private int targetLetters = 3;
     private float timeLeft = 60;
+
+    private float thirst = 0;
+    private float dehydrationRate = 100 / 60.0f; // you get thirsty in 1 minute
 
     private const int maxLettersWrong = 3;
 
@@ -65,27 +83,40 @@ public class GameManager : MonoBehaviour {
 	    totalLettersCorrect = totalLettersWrong = totalBombsFound = totalBombsMissed = totalTeaSips = 0;
         panelGameOver.gameObject.SetActive(false);
 
-	    StartLevel(0);
-        SpawnLetter();
+	    StartLevel(8);
+        //SpawnLetter();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         // Tick-tock...
-	    timeLeft -= Time.deltaTime;
-
+	    if (isSpawningLetters) {
+	        timeLeft -= Time.deltaTime;
+	        thirst += Time.deltaTime * dehydrationRate;
+	    }
+	    
         // Spawn letters
-        if (Time.time > nextLetterSpawnTime && numLettersInExistence <= maxLettersInExistence) SpawnLetter();
-
+        if (isSpawningLetters && Time.time > nextLetterSpawnTime && numLettersInExistence <= maxLettersInExistence) SpawnLetter();
 
 
         // LOSE! if necessary
-	    if (timeLeft <= 0 || lettersIncorrect >= maxLettersWrong) {
+	    if (levels[curLevel].teacup && thirst >= 100) {
 	        isSpawningLetters = false;
+	        lblLossReason.text = "YOU DIED OF THIRST!";
+	        panelGameOver.gameObject.SetActive(true);
+	    }
+	    else if (timeLeft <= 0 || lettersIncorrect >= maxLettersWrong) {
+	        isSpawningLetters = false;
+	        lblLossReason.text = "YOU'RE FIRED!";
             panelGameOver.gameObject.SetActive(true);
 	    }
 
+        // Also, PROGRESS TO THE NEXT LEVEL! if necessary
+	    if (lettersCorrect >= targetLetters) {
+            StartLevel(curLevel + 1);
+	    }
 
+	    UpdateThirstLevelUI();
 	    UpdatePhoneUI();
 	    UpdateGameOverUI();
 	}
@@ -96,8 +127,10 @@ public class GameManager : MonoBehaviour {
         // Pick parameters.
         // Dest is selected at random
         var letterDest = (Destination)(levels[curLevel].voidDests ? rand.Next(5) : rand.Next(4));
-        // Bombs have a very low probability: half of the current level, at a min of 6% and max of 35%
+        // Bombs - if at all possible - have a very low probability: half of the current level, at a min of 6% and max of 35%
         var isBomb = rand.NextDouble() < Mathf.Clamp(curLevel / 2.0f, 0.06f, 0.35f);
+        //if (!levels[curLevel].bombs) 
+            isBomb = false; // TODO: Bombs are currently disabled. Maybe allow them if I have the time.
         // Language is selected randomly from those allowed
         var lang = levels[curLevel].languagesAllowed.ToList().GetRand();
 
@@ -107,7 +140,9 @@ public class GameManager : MonoBehaviour {
         var newLetter = Instantiate(envelopePrefab, envelopeSpawnPoint.position, Quaternion.Euler(rotX, rotY, 0));
         newLetter.GetComponent<Letter>().SetupLetter(curLevel, letterDest, isBomb, lang);
 
-        nextLetterSpawnTime = Time.time + (float)rand.NextDouble(4, 8);
+        // Delay letters a little bit as more dictionaries start piling up
+        var maxLetterDelay = (curLevel < 4) ? 6 : 8;
+        nextLetterSpawnTime = Time.time + (float)rand.NextDouble(4, maxLetterDelay);
 
         numLettersInExistence += 1;
     }
@@ -116,21 +151,45 @@ public class GameManager : MonoBehaviour {
 
 
     public void StartLevel(int i) {
+        // Generate infinite levels once we get past all of them
+        if (i < levels.Length) {
+            curLevelData = levels[i];
+        }
+        else {
+            curLevelData.numLetters += 5;
+            curLevelData.timeSecs += 40; // 8 seconds per letter
+            // and that's it!
+        }
+
         curLevel = i;
+
         voidTray.SetActive(levels[i].voidDests);
         // TODO bomb scanner
         teacup.SetActive(levels[i].teacup);
         teacupPlate.SetActive(levels[i].teacup);
         // dictionaries
-        bulgarianDictionary.SetActive(levels[i].languagesAllowed.Contains(Language.Bulgarian));
+        bulgarianDictionary?.SetActive(levels[i].languagesAllowed.Contains(Language.Bulgarian));
+        germanDictionary?.SetActive(levels[i].languagesAllowed.Contains(Language.German));
+        russianDictionary?.SetActive(levels[i].languagesAllowed.Contains(Language.Russian));
+        norwegianDictionary?.SetActive(levels[i].languagesAllowed.Contains(Language.Norwegian));
+        chineseDictionary?.SetActive(levels[i].languagesAllowed.Contains(Language.Chinese));
 
         timeLeft = levels[i].timeSecs;
         lettersCorrect = 0;
         lettersIncorrect = 0;
         targetLetters = levels[i].numLetters;
 
+        // reset thirst only if we didn't care for it until now
+        if (i == 0 || (!levels[i - 1].teacup && levels[i].teacup)) thirst = 0;
+
         numLettersInExistence = 0;
         isSpawningLetters = true;
+    }
+
+    void UpdateThirstLevelUI() {
+        lblThirst.text = levels[curLevel].teacup ? $"Thirst: {thirst * 0.01:0%}" : "";
+
+        lblLevel.text = "Level " + curLevel;
     }
 
     void UpdatePhoneUI() {
@@ -143,14 +202,16 @@ public class GameManager : MonoBehaviour {
 
     private void UpdateGameOverUI() {
         lblGameOver.text =
-            $"Survived until level {curLevel + 1}\n" + $"Total letters delivered: {totalLettersCorrect}\n" + $"Total letters misdelivered: {totalLettersWrong}\n" +
-            $"Total sips of tea: {totalTeaSips}\n" + $"Total bombs avoided: {totalBombsFound}\n" + $"Total bombs missed: {totalBombsMissed}";
+            $"Survived until level {curLevel + 1}\n" + $"Total letters delivered: {totalLettersCorrect}\n" +
+            $"Total letters misdelivered: {totalLettersWrong}\n" +
+            $"Total sips of tea: {totalTeaSips}\n"; //+ $"Total bombs avoided: {totalBombsFound}\n" + $"Total bombs missed: {totalBombsMissed}";
     }
 
 
     public static void LetterDeliveredCorrectly(bool wasBomb) {
         instance.lettersCorrect += 1;
         instance.totalLettersCorrect += 1;
+        instance.numLettersInExistence -= 1;
 
         if (wasBomb) instance.totalBombsFound += 1;
     }
@@ -158,8 +219,14 @@ public class GameManager : MonoBehaviour {
     public static void LetterMistaken(bool wasBomb) {
         instance.lettersIncorrect += 1;
         instance.totalLettersWrong += 1;
+        instance.numLettersInExistence -= 1;
 
         if (wasBomb) instance.totalBombsMissed += 1;
+    }
+
+    public static void HadASip() {
+        instance.thirst = (instance.thirst > 60) ? instance.thirst - 60 : 0;
+        instance.totalTeaSips += 1;
     }
 
     public static void UpdateHeldItemInfo(string info) {
@@ -181,6 +248,7 @@ public class GameManager : MonoBehaviour {
                 throw new ArgumentOutOfRangeException(nameof(val), val, null);
         }
     }
+
 }
 
 public enum Destination {

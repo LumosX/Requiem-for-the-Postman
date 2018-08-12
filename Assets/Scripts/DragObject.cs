@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Configuration;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragObject : MonoBehaviour {
 
@@ -25,12 +26,17 @@ public class DragObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		// destroy or reset any draggable object if it falls into the void.
 	    if (transform.position.y <= -200) {
 	        if (gameObject.tag == "Envelope") {
-                // if we drop an envelope and it's a bomb, all's well; if it's not a bomb, then it's bad
-                if (GetComponent<Letter>().isBomb) GameManager.LetterDeliveredCorrectly(true);
-                else GameManager.LetterMistaken(false);
+                // and we only care for letters if they're from the same level
+	            if (GetComponent<Letter>().levelCreated == GameManager.CurLevel) {
+	                // if we drop an envelope and it's a bomb, all's well; if it's not a bomb, then it's bad
+	                if (GetComponent<Letter>().isBomb) GameManager.LetterDeliveredCorrectly(true);
+	                else GameManager.LetterMistaken(false);
+	            }
+                
 	            Destroy(gameObject); // not elegant, but whatever
 	            return;
 	        }
@@ -52,6 +58,10 @@ public class DragObject : MonoBehaviour {
 
     void OnMouseDrag()
     {
+        // filthy hacks: only work in the MainScene
+        //Debug.Log(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name != "MainScene") return;
+
         // disable rigidbody whilst dragging to prevent gravitational acceleration
         rb.useGravity = false;
 

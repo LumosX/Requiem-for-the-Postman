@@ -9,7 +9,7 @@ public class OutTray : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        GetComponentInChildren<Text>().text = GameManager.DestToStr(dest).ToUpper();
+        transform.root.GetComponentInChildren<Text>().text = GameManager.DestToStr(dest).ToUpper();
     }
 
     void OnCollisionEnter(Collision collision) {
@@ -17,6 +17,15 @@ public class OutTray : MonoBehaviour {
         if (collision.gameObject.tag == "Envelope") {
             //Debug.Log("Out tray collided with an envelope");
             var letterData = collision.gameObject.GetComponent<Letter>();
+
+            // if it's a letter from a previous letter, just ignore it completely
+            if (letterData.levelCreated != GameManager.CurLevel) {
+                Destroy(collision.gameObject.transform.root.gameObject);
+                return;
+            }
+
+            //Debug.Log("IS IT A BOMB: " + letterData.isBomb);
+
             // bombs must be dropped into the void.
             if (letterData.isBomb) {
                 GameManager.LetterMistaken(true);
