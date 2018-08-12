@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4233479064769952}
   - component: {fileID: 33510276129087948}
   - component: {fileID: 23476479296399168}
+  - component: {fileID: 64221789855666388}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -53,6 +54,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4531622755529194}
+  - component: {fileID: 54715054069741366}
+  - component: {fileID: 65032275917718364}
+  - component: {fileID: 114843776802898058}
   m_Layer: 0
   m_Name: Teacup
   m_TagString: Untagged
@@ -183,3 +187,55 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326192707502048}
   m_Mesh: {fileID: 4300032, guid: 02e9938d122de7241960117375282d6f, type: 3}
+--- !u!54 &54715054069741366
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631145277192850}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &64221789855666388
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629289519081834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300018, guid: 02e9938d122de7241960117375282d6f, type: 3}
+--- !u!65 &65032275917718364
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631145277192850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6450996, y: 0.82607365, z: 2.6760168}
+  m_Center: {x: -0.06289101, y: 2.316381, z: -0.015811443}
+--- !u!114 &114843776802898058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631145277192850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea240afa18d39f488bc05dec7988e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
