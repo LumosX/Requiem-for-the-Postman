@@ -192,6 +192,8 @@ GameObject:
   - component: {fileID: 54434598726463310}
   - component: {fileID: 114092595202052602}
   - component: {fileID: 114332769282660956}
+  - component: {fileID: 82994636975745348}
+  - component: {fileID: 82228136192143638}
   m_Layer: 0
   m_Name: German Dictionary
   m_TagString: Untagged
@@ -327,7 +329,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769697303015428}
-  m_LocalRotation: {x: 0, y: -0, z: 0.008726839, w: -0.9999619}
+  m_LocalRotation: {x: 0, y: -0, z: 0.00087297574, w: -0.99999964}
   m_LocalPosition: {x: 5.33, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -335,7 +337,7 @@ Transform:
   - {fileID: 4802835909715206}
   m_Father: {fileID: 4128812558959290}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.9}
 --- !u!4 &4985556333594228
 Transform:
   m_ObjectHideFlags: 1
@@ -554,6 +556,166 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.463265, y: 2.137576, z: 14.147712}
   m_Center: {x: -5.140117, y: -1.075253, z: -0.015264034}
+--- !u!82 &82228136192143638
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884308273823358}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.8
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82994636975745348
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884308273823358}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.8
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114018942288500164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -623,7 +785,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -636,7 +798,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "<b>Gro\xDF</b> - Great, big\n<b>Klein</b> - Little, small\n<b>Immer</b>
-    - Always\n\n<b>Sheune</b> - Barn\n<b>(Grab)H\xFCgel </b> - (Burial) mound, hill\n<b>Deckel</b>
+    - Always\n\n<b>Scheune</b> - Barn\n<b>(Grab)H\xFCgel </b> - (Burial) mound, hill\n<b>Deckel</b>
     - Hatch\n<b>M\xFChle</b> - Mill\n<b>Wasser</b> - Water\n<b>Untergang</b> - Downfall,
     setting\n\n"
 --- !u!114 &114244267043067142
@@ -659,7 +821,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -704,6 +866,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b800f33d8900154a9d81f708d3f9e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupClips:
+  - {fileID: 8300000, guid: f3c390519ad50de499f28e5e3c8f036e, type: 3}
+  - {fileID: 8300000, guid: ebb2a1ad6df34f84783ce868d45fbb07, type: 3}
+  - {fileID: 8300000, guid: bf19bd65b1e5e114ab7e9077e68c1cae, type: 3}
+  openClips:
+  - {fileID: 8300000, guid: c4803f9eae5e9314dbbc17fe5e66b769, type: 3}
+  - {fileID: 8300000, guid: d688e8059462e184fb03917c12f71ffa, type: 3}
+  closeClips:
+  - {fileID: 8300000, guid: d9fc87fc6b54b004dbc320430aef317c, type: 3}
+  - {fileID: 8300000, guid: 2921ae15e71eb904bae36ad551415ae2, type: 3}
 --- !u!114 &114368604810785298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,7 +896,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12, type: 3}
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
@@ -737,7 +909,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "<b>England</b> - England\n<b>Gro\xDFbritannien</b> - Great Britain\n<b>Das\r
-    Vereinigtes K\xF6nigreich\r</b> - The united kingdom\n\n\n\n\n\n<b>Stra\xDFe</b>
+    vereinigtes K\xF6nigreich\r</b> - The united kingdom\n\n\n\n\n\n<b>Stra\xDFe</b>
     - street\n<b>Dorf</b> - village"
 --- !u!114 &114385297377594564
 MonoBehaviour:

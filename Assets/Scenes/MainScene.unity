@@ -506,21 +506,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: openClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: closeClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: pickupClips.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4128812558959290, guid: fe872672d5c0ede47a70acb45d7f1861, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.89
@@ -553,75 +538,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114244267043067142, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12,
-        type: 3}
-    - target: {fileID: 114368604810785298, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12,
-        type: 3}
-    - target: {fileID: 114229069928081810, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4514768527d05104eb23229cc2372b12,
-        type: 3}
-    - target: {fileID: 4976666461919996, guid: fe872672d5c0ede47a70acb45d7f1861, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976666461919996, guid: fe872672d5c0ede47a70acb45d7f1861, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.00087297574
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976666461919996, guid: fe872672d5c0ede47a70acb45d7f1861, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -0.99999964
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976666461919996, guid: fe872672d5c0ede47a70acb45d7f1861, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 359.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: pickupClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: f3c390519ad50de499f28e5e3c8f036e, type: 3}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: pickupClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: ebb2a1ad6df34f84783ce868d45fbb07, type: 3}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: pickupClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: bf19bd65b1e5e114ab7e9077e68c1cae, type: 3}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: closeClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: d9fc87fc6b54b004dbc320430aef317c, type: 3}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: closeClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2921ae15e71eb904bae36ad551415ae2, type: 3}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: openClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: c4803f9eae5e9314dbbc17fe5e66b769, type: 3}
-    - target: {fileID: 114332769282660956, guid: fe872672d5c0ede47a70acb45d7f1861,
-        type: 2}
-      propertyPath: openClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: d688e8059462e184fb03917c12f71ffa, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe872672d5c0ede47a70acb45d7f1861, type: 2}
   m_IsPrefabParent: 0
@@ -3381,86 +3297,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1884308273823358, guid: fe872672d5c0ede47a70acb45d7f1861,
     type: 2}
   m_PrefabInternal: {fileID: 210458521}
---- !u!82 &1928935512
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1928935511}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.8
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!1 &1979472317
 GameObject:
   m_ObjectHideFlags: 0
