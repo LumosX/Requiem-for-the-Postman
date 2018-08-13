@@ -909,7 +909,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "<b>England</b> - England\n<b>Gro\xDFbritannien</b> - Great Britain\n<b>Das\r
-    vereinigtes K\xF6nigreich\r</b> - The united kingdom\n\n\n\n\n\n<b>Stra\xDFe</b>
+    vereinigte K\xF6nigreich\r</b> - The united kingdom\n\n\n\n\n\n<b>Stra\xDFe</b>
     - street\n<b>Dorf</b> - village"
 --- !u!114 &114385297377594564
 MonoBehaviour:
